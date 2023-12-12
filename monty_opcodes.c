@@ -22,11 +22,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 		fprintf(stderr, "L%u: usage: push integer\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	if (!stack_head)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", ln_);
-		exit(EXIT_FAILURE);
-	}
+
 	data = convert_to_integer(input, ln_);
 
 	n_node = (stack_t *) malloc(sizeof(stack_t));
@@ -59,7 +55,7 @@ int convert_to_integer(char *input, unsigned int ln_)
 	char *endptr;
 	int data = strtol(input, &endptr, 10);
 
-	if (endptr == input || *endptr != '\0')
+	if (*endptr != '\0')
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", ln_);
 		exit(EXIT_FAILURE);
