@@ -24,7 +24,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 	}
 	if (!stack_head)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", ln_);
 		exit(EXIT_FAILURE);
 	}
 	data = convert_to_integer(input, ln_);
