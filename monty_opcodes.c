@@ -22,7 +22,11 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 		fprintf(stderr, "L%u: usage: push integer\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	/*data = atoi(input);*/
+	if (!stack_head)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	data = convert_to_integer(input, ln_);
 
 	n_node = (stack_t *) malloc(sizeof(stack_t));
