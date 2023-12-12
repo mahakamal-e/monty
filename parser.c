@@ -1,6 +1,5 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 
 /**
  * open_file - a function that used to handle opening and error.

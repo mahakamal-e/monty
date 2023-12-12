@@ -14,8 +14,6 @@
 #include <limits.h>
 #include <stdarg.h>
 
-#define _POSIX_C_SOURCE 200809L
-#define  _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
