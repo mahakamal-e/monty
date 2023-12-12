@@ -45,17 +45,17 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 /**
  * convert_to_integer - a function that Converts a string to an integer value.
  *
- * @input: A pointer to the string that needs to be converted to an integer.
- * @ln_: Line number from the input source.
+ * @input: a pointer to the string that needs to be converted to an integer.
+ * @ln_: line number from the input source.
  *
- * Return: An integer value converted from the provided string.
+ * Return: an integer value converted from the provided string.
  */
 int convert_to_integer(char *input, unsigned int ln_)
 {
 	char *endptr;
 	int data = strtol(input, &endptr, 10);
 
-	if (*endptr != '\0')
+	if (endptr == input || *endptr != '\0')
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", ln_);
 		exit(EXIT_FAILURE);
