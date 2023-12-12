@@ -17,7 +17,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 
 	input = strtok(NULL, " \t\n");
 	data = convert_to_integer(input, ln_);
-	n_node = (stack_t*) malloc(sizeof(stack_t));
+	n_node = (stack_t *) malloc(sizeof(stack_t));
 	if (n_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -35,8 +35,12 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 	*stack_head = n_node;
 }
 /**
- * convert_to_integer -
+ * convert_to_integer - a function that Converts a string to an integer value.
  *
+ * @input: A pointer to the string that needs to be converted to an integer.
+ * @ln_: Line number from the input source.
+ *
+ * Return: An integer value converted from the provided string.
  */
 int convert_to_integer(char *input, unsigned int ln_)
 {
@@ -62,6 +66,7 @@ int convert_to_integer(char *input, unsigned int ln_)
 void op_pall(stack_t **stack_head,  __attribute__((unused)) unsigned int ln_)
 {
 	stack_t *head;
+
 	head = *stack_head;
 
 	while (head != NULL)
