@@ -58,5 +58,4 @@ void op_pall(stack_t **stack_head,  __attribute__((unused)) unsigned int ln_);
 void op_push(stack_t **stack_head,  unsigned int ln_);
 int convert_to_integer(char *input, unsigned int ln_);
 
-int monty(char *filename, stack_t **stack);
 #endif /* monty.h */

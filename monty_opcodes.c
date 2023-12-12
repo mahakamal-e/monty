@@ -17,6 +17,12 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 
 	input = strtok(NULL, " \t\n");
 	data = convert_to_integer(input, ln_);
+
+	if (input == NULL || stack_head == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", ln_);
+		exit(EXIT_FAILURE);
+	}
 	n_node = (stack_t *) malloc(sizeof(stack_t));
 	if (n_node == NULL)
 	{
