@@ -80,7 +80,7 @@ void op_add(stack_t **stack_head, unsigned int ln_)
 	op_pop(stack_head, ln_);
 }
 /**
- * nop - The opcode nop doesn’t do anything.
+ * op_nop - The opcode nop doesn’t do anything.
  *
  * @stack_head: pointer point to top element in the node.
  * @ln_: line number of the opcode.
