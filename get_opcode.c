@@ -13,8 +13,8 @@
 void execute_opcode(stack_t **stack_head, char *opcode_, unsigned int ln_)
 {
 	instruction_t func_select[] = {
-		{"push", op_push},
-		{"pall", op_pall},
+		{"push", push},
+		{"pall", pall},
 		{"pint", op_print},
 		{"pop", op_pop},
 		{"swap", op_swap},

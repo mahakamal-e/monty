@@ -63,4 +63,7 @@ void op_swap(stack_t **stack_head, unsigned int ln_);
 void op_add(stack_t **stack_head, unsigned int ln_);
 void op_nop(stack_t **stack_head, unsigned int ln_);
 
+int parse_value(char *operation, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 #endif
