@@ -34,5 +34,5 @@ void execute_opcode(stack_t **stack_head, char *opcode_, unsigned int ln_)
 			return;
 		}
 	}
-	fprintf(stderr, "%d: unknown instruction %s\n", ln_, opcode_);
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln_, opcode_);
 }
