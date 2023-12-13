@@ -15,6 +15,11 @@ void execute_opcode(stack_t **stack_head, char *opcode_, unsigned int ln_)
 	instruction_t func_select[] = {
 		{"push", op_push},
 		{"pall", op_pall},
+		{"pint", op_print},
+		{"pop", op_pop},
+		{"swap", op_swap},
+		{"add", op_add},
+		{"nop", op_nop},
 		{NULL, NULL}
 	};
 	unsigned int i;
