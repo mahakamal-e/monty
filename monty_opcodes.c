@@ -60,7 +60,7 @@ int convert_to_integer(char *input, unsigned int ln_)
 		fprintf(stderr, "L%u: usage: push integer\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	return (data);
+	return ((int)data);
 }
 
 /**
