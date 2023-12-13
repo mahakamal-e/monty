@@ -1,4 +1,5 @@
 #include "monty.h"
+char *value;
 
 /**
  * is_int - .
@@ -53,6 +54,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 	stack_t *new_node = malloc(sizeof(stack_t));
 	int is_num, number;
 
+	value = strtok(NULL, " \t\n");
 	is_num = is_int(value);
 	if ((!is_num))
 	{

@@ -37,7 +37,7 @@ void interpret_monty_script(FILE *file_name, stack_t **stack_head)
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
-	int line_number = 0;
+	unsigned int line_number = 0;
 
 	while ((read = getline(&line, &len, file_name)) != -1)
 	{
