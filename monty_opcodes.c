@@ -15,22 +15,23 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 	char *input;
 	int data;
 
-	input = strtok(NULL, " \t\n");
-
-	if (!input)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", ln_);
-		exit(EXIT_FAILURE);
-	}
-
-	data = convert_to_integer(input, ln_);
-
 	n_node = (stack_t *) malloc(sizeof(stack_t));
+
 	if (n_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	input = strtok(NULL, " \t\n");
+
+	if (!input)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", ln_);
+		return;
+	}
+
+	data = convert_to_integer(input, ln_);
+
 	n_node->n = data;
 	n_node->prev = NULL;
 	n_node->next = *stack_head;
