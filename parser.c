@@ -42,7 +42,7 @@ void interpret_monty_script(FILE *file_name, stack_t **stack_head)
 	while ((read = getline(&line, &len, file_name)) != -1)
 	{
 		line_number++;
-		opcode = strtok(line, " \t\n");
+		opcode = strtok(line, " \t\r\n\a\"");
 
 		if (opcode != NULL)
 			execute_opcode(stack_head, opcode, line_number);
