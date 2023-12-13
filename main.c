@@ -1,5 +1,5 @@
 #include "monty.h"
-char *value;
+
 /**
  * main - entry point for program (monty interperter).
  *
