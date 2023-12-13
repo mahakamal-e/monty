@@ -27,7 +27,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 	if (!input)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", ln_);
-		return;
+		exit(EXIT_FAILURE);
 	}
 
 	data = convert_to_integer(input, ln_);
