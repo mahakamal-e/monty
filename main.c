@@ -20,5 +20,5 @@ int main(int argc, char **argv)
 	execute_file(argv[1], &stack_head);
 	free_stack(&stack_head);
 
-	return (0);
+	exit(EXIT_SUCCESS);
 }
