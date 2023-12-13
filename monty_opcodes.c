@@ -9,7 +9,7 @@
  *
  * Return: void
  */
-void op_push(stack_t **stack_head,  unsigned int ln_)
+/*void op_push(stack_t **stack_head,  unsigned int ln_)
 {
 	stack_t *n_node;
 	char *input;
@@ -42,7 +42,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 	}
 
 	*stack_head = n_node;
-}
+}*/
 /**
  * convert_to_integer - a function that Converts a string to an integer value.
  *
