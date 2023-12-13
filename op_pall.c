@@ -9,13 +9,13 @@
  */
 void op_pall(stack_t **stack_head,  __attribute__((unused)) unsigned int ln_)
 {
-        stack_t *head;
+	stack_t *head;
 
-        head = *stack_head;
+	head = *stack_head;
 
-        while (head != NULL)
-        {
-                fprintf(stdout, "%d\n", head->n);
-                head = head->next;
-        }
+	while (head != NULL)
+	{
+		fprintf(stdout, "%d\n", head->n);
+		head = head->next;
+	}
 }
