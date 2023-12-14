@@ -39,7 +39,6 @@ void op_div(stack_t **stack_head, unsigned int ln_)
 		fprintf(stderr, "L%d: can't div, stack too short\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	dividend = (*stack_head)->n;
 	divisor = (*stack_head)->next->n;
 
 	if (divisor == 0)
@@ -47,8 +46,10 @@ void op_div(stack_t **stack_head, unsigned int ln_)
 		fprintf(stderr, "L%d: division by zero\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *stack_head;
+	dividend = (*stack_head)->n;
 	(*stack_head)->next->n /= dividend;
+	tmp = *stack_head;
+
 	*stack_head = (*stack_head)->next;
 	free(tmp);
 }
