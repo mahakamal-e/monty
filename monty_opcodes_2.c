@@ -47,7 +47,7 @@ void op_div(stack_t **stack_head, unsigned int ln_)
 	}
 	tmp = *stack_head;
 	number = (*stack_head)->n;
-	(*stack_head)->next->n /= num;
+	(*stack_head)->next->n /= number;
 	(*stack_head)->next->prev = NULL;
 	free(tmp);
 	*stack_head = (*stack_head)->next;
