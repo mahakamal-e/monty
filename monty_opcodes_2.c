@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * op_sub - sub two elements
- * @stack: head stack
+ * @stack_head: head stack
  * @ln_: command number
 */
 void op_sub(stack_t **stack_head, unsigned int ln_)
@@ -17,16 +17,16 @@ void op_sub(stack_t **stack_head, unsigned int ln_)
 	}
 	top = *stack_head;
 	second = top->prev;
-	
+
 	result = second->n - top->n;
-	
+
 	second->n = result;
 	*stack_head = second;
 	free(top);
 }
 /**
  * op_div - sub two elements
- * @stack: head stack
+ * @stack_head: head stack
  * @ln_: command number
 */
 void op_div(stack_t **stack_head, unsigned int ln_)
