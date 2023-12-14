@@ -35,22 +35,16 @@ void op_pchar(stack_t **stack_head, unsigned int ln_)
  * @stack_head: head pointer point to top element.
  * @ln_: line number
  */
-void op_pstr(stack_t **stack_head, unsigned int ln_)
+void op_pstr(stack_t **stack_head, __attribute__((unused)) unsigned int ln_)
 {
 	stack_t *tmp;
-	int val;
+
 	tmp = *stack_head;
 
-	while (tmp != NULL && tmp->n != 0)
+	while (tmp && tmp->n != 0 && tmp->n >= 0 && tmp->n <= 127)
 	{
-		val = tmp->n;
-		if (val < 0 || val > 127)
-		{
-			fprintf(stderr, "L%d: can't pstr, value out of range\n", ln_);
-			exit(EXIT_FAILURE);
-		}
-		putchar((char)val);
+		printf("%c", tmp->n);
 		tmp = tmp->next;
 	}
-	putchar('\n');
+	printf("\n");
 }
