@@ -31,24 +31,24 @@ void op_sub(stack_t **stack_head, unsigned int ln_)
 */
 void op_div(stack_t **stack_head, unsigned int ln_)
 {
-	stack_t *top, *second;
+	stack_t *tmp;
+	int number;
 
 	if (*stack_head == NULL || (*stack_head)->prev == NULL)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	top = *stack_head;
-	second = (*stack_head)->prev;
 
-
-	if (top->n == 0)
+	if ((*stack_head)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	second->n /= top->n;
-	*stack_head = second;
-	second->prev = NULL;
-	free(top);
+	tmp = *stack_head;
+	number = (*stack_head)->n;
+	(*stack_head)->next->n /= num;
+	(*stack_head)->next->prev = NULL;
+	free(tmp);
+	*stack_head = (*stack_head)->next;
 }
