@@ -22,6 +22,7 @@ void execute_opcode(stack_t **stack_head, char *opcode_, unsigned int ln_)
 		{"nop", op_nop},
 		{"sub", op_sub},
 		{"div", op_div},
+		{"pchar", op_pchar},
 		{NULL, NULL}
 	};
 	unsigned int i;

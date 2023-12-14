@@ -65,5 +65,5 @@ void op_add(stack_t **stack_head, unsigned int ln_);
 void op_nop(stack_t **stack_head, unsigned int ln_);
 void op_sub(stack_t **stack_head, unsigned int ln_);
 void op_div(stack_t **stack_head, unsigned int ln_);
-
+void op_pchar(stack_t **stack_head, unsigned int ln_);
 #endif
