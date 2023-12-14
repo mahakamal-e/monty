@@ -54,7 +54,7 @@ void op_push(stack_t **stack_head,  unsigned int ln_)
 int convert_to_integer(char *input, unsigned int ln_)
 {
 	char *endptr;
-	int data = strtol(input, &endptr, 10);
+	long int data = strtol(input, &endptr, 10);
 
 	if (*endptr != '\0')
 	{
