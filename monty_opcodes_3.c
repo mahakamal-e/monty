@@ -28,3 +28,29 @@ void op_pchar(stack_t **stack_head, unsigned int ln_)
 	/**stack_head = (*stack_head)->next;*/
 	/*free(temp);*/
 }
+/**
+ * op_pstr - function that used to prints the string starting
+ * at the top of the stack, followed by a new line.
+ *
+ * @stack_head: head pointer point to top element.
+ * @ln_: line number
+ */
+void op_pstr(stack_t **stack_head, unsigned int ln_)
+{
+	stack_t *tmp;
+	int val;
+	tmp = *stack_head;
+
+	while (tmp != NULL && tmp->n != 0)
+	{
+		val = tmp->n;
+		if (val < 0 || val > 127)
+		{
+			fprintf(stderr, "L%d: can't pstr, value out of range\n", ln_);
+			exit(EXIT_FAILURE);
+		}
+		putchar((char)val);
+		tmp = tmp->next;
+	}
+	putchar('\n');
+}
