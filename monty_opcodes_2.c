@@ -49,7 +49,7 @@ void op_div(stack_t **stack_head, unsigned int ln_)
 	free(tmp);
 }
 /**
- * mul - a function that used to multiplies the second top 
+ * mul - a function that used to multiplies the second top
  * @stack_head: head stack
  * @ln_: line number
  */
@@ -57,13 +57,13 @@ void op_mul(stack_t **stack_head, unsigned int ln_)
 {
 	int mul;
 
-	mul = (*stack_head)->n * (*stack_head)->next->n;
 
 	if (*stack_head == NULL || (*stack_head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", ln_);
 		exit(EXIT_FAILURE);
 	}
+	mul = (*stack_head)->n * (*stack_head)->next->n;
 	op_pop(stack_head, ln_);
 	(*stack_head)->n = mul;
 }
