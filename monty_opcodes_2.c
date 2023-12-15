@@ -49,7 +49,7 @@ void op_div(stack_t **stack_head, unsigned int ln_)
 	free(tmp);
 }
 /**
- * mul - a function that used to multiplies the second top
+ * op_mul - a function that used to multiplies the second top
  * @stack_head: head stack
  * @ln_: line number
  */
