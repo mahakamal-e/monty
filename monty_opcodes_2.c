@@ -6,8 +6,6 @@
 */
 void op_sub(stack_t **stack_head, unsigned int ln_)
 {
-	stack_t *top;
-	stack_t *second;
 	int result;
 
 	if (*stack_head == NULL || (*stack_head)->prev == NULL)
@@ -15,14 +13,11 @@ void op_sub(stack_t **stack_head, unsigned int ln_)
 		fprintf(stderr, "L%d: can't sub, stack too short\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	top = *stack_head;
-	second = top->prev;
+	result = (*stack_head)->next->n - (*stack_head)->n;
 
-	result = second->n - top->n;
+	op_pop(stack_head, ln_);
 
-	second->n = result;
-	*stack_head = second;
-	free(top);
+	(*stack_head)->n = result;
 }
 /**
  * op_div - sub two elements
@@ -52,4 +47,23 @@ void op_div(stack_t **stack_head, unsigned int ln_)
 
 	*stack_head = (*stack_head)->next;
 	free(tmp);
+}
+/**
+ * mul - a function that used to multiplies the second top 
+ * @stack_head: head stack
+ * @ln_: line number
+ */
+void op_mul(stack_t **stack_head, unsigned int ln_)
+{
+	int mul;
+
+	mul = (*stack_head)->n * (*stack_head)->next->n;
+
+	if (*stack_head == NULL || (*stack_head)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", ln_);
+		exit(EXIT_FAILURE);
+	}
+	op_pop(stack_head, ln_);
+	(*stack_head)->n = mul;
 }
