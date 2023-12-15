@@ -55,7 +55,8 @@ void op_div(stack_t **stack_head, unsigned int ln_)
  */
 void op_mul(stack_t **stack_head, unsigned int ln_)
 {
-	int mul;
+	int number;
+	stack_t *tmp;
 
 
 	if (*stack_head == NULL || (*stack_head)->next == NULL)
@@ -63,7 +64,10 @@ void op_mul(stack_t **stack_head, unsigned int ln_)
 		fprintf(stderr, "L%u: can't div, stack too short\n", ln_);
 		exit(EXIT_FAILURE);
 	}
-	mul = (*stack_head)->n * (*stack_head)->next->n;
-	op_pop(stack_head, ln_);
-	(*stack_head)->n = mul;
+	tmp = *stack_head;
+	number = (*stack_head)->n;
+	(*stack_head)->next->n *= number;
+	(*stack_head)->next->prev = NULL;
+	free(tmp);
+	*stack_head = (*stack_head)->next;
 }
